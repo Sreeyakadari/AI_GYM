@@ -2,21 +2,21 @@
 __pycache__/
 *.pyc
 
-# Virtual environments (IMPORTANT)
+# Virtual environments
 .venv/
 venv/
-Main App/.venv/
-Main App/venv/
 
 # Environment variables
 .env
+*.env
+
+# Local database
+data.db
+*.db
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# Database
-Main App/data.db
 
 # Logs
 *.log
