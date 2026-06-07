@@ -1,0 +1,305 @@
+:root {
+  --accent: #f97316; /* electric orange  */
+  --accent-hot: #ef4444; /* hot red           */
+  --accent-glow: rgba(249, 115, 22, 0.18);
+  --bg-base: #07090f; /* near-black        */
+  --bg-card: #0f1520; /* card surface      */
+  --bg-sidebar: #0b0f1a; /* sidebar           */
+  --border: rgba(249, 115, 22, 0.15);
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+}
+
+#root > div,
+.stApp {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+[data-testid="stHeader"] {
+  display: none !important;
+}
+
+/* =========================================================
+   GLOBAL THEME
+========================================================= */
+
+.stApp {
+  background-color: var(--bg-base);
+  background-image:
+    radial-gradient(
+      ellipse 80% 40% at 50% -10%,
+      rgba(249, 115, 22, 0.1) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 90% 80%,
+      rgba(239, 68, 68, 0.07) 0%,
+      transparent 60%
+    );
+  color: var(--text-primary);
+}
+
+[data-testid="stSidebar"] {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: block !important;
+  visibility: visible !important;
+  transform: none !important;
+  min-width: 244px !important;
+}
+
+[data-testid="collapsedControl"] {
+  display: none !important;
+}
+
+/* =========================================================
+   TYPOGRAPHY (SCOPED – safer)
+========================================================= */
+
+.block-container,
+.block-container * {
+  font-family: "AdobeClean", sans-serif !important;
+}
+
+/* Headings get the orange accent */
+h1 {
+  color: var(--accent) !important;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 40px rgba(249, 115, 22, 0.35);
+}
+h2 {
+  color: var(--text-primary) !important;
+  border-left: 3px solid var(--accent);
+  padding-left: 0.6rem;
+}
+h3 {
+  color: var(--text-primary) !important;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.block-container {
+  padding: 20px 3rem !important;
+  max-width: 750px !important;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button,
+.stButton button,
+.stDownloadButton button,
+.MuiBox-root button {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 0 !important;
+  font-family: "AdobeClean", sans-serif !important;
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease !important;
+}
+
+button:hover,
+.stButton button:hover,
+.stDownloadButton button:hover {
+  background-color: var(--accent) !important;
+  color: #fff !important;
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.45) !important;
+}
+
+/* =========================================================
+   INPUTS & TEXT ELEMENTS
+========================================================= */
+
+input,
+textarea,
+p,
+li,
+code,
+[data-testid="stSelectbox"] > div > div,
+[data-baseweb="select"] > div,
+[data-baseweb="popover"] ul,
+[data-baseweb="menu"] {
+  border-radius: 0 !important;
+  font-family: "AdobeClean", sans-serif !important;
+}
+
+/* Input focus glow */
+input:focus,
+textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--accent-glow) !important;
+  outline: none !important;
+}
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+[data-testid="stMetric"] {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent) !important;
+  padding: 1rem 1.2rem;
+  border-radius: 0;
+  transition: box-shadow 0.2s ease;
+}
+
+[data-testid="stMetric"]:hover {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+[data-testid="stMetric"] div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-testid="stMetricValue"] {
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+  color: var(--accent) !important;
+}
+
+[data-testid="stMetricLabel"] {
+  font-size: 15px !important;
+  opacity: 0.6;
+  color: var(--text-muted) !important;
+}
+
+[data-testid="stMetric"] div label p {
+  font-size: 16px !important;
+}
+
+/* =========================================================
+   CONTAINERS / CARDS
+========================================================= */
+
+.stContainer,
+.stExpander,
+.stTabs,
+.stColumns,
+.stPopover,
+.stAlertContainer,
+.stStatusContainer,
+.stMetric,
+.stTable,
+.stDataFrame,
+.stForm,
+.stSelectbox,
+[data-baseweb="select"] > div,
+[data-testid="stForm"],
+[data-testid="stMetric"],
+[data-testid="stNumberInputContainer"],
+[data-testid="stDataFrameColumnMenu"],
+[data-testid="stHeadingWithActionElements"],
+[data-testid="stCaptionContainer"] p,
+[data-testid="stAlertContentInfo"] p,
+[data-testid="stSidebarNavLink"],
+[data-testid="stMarkdownContainer"] h3,
+[data-baseweb="popover"],
+[data-baseweb="menu"],
+div[role="menu"],
+div[role="menuitem"] {
+  border-radius: 0 !important;
+  font-family: "AdobeClean", sans-serif !important;
+}
+
+/* =========================================================
+   DATAFRAME FIX
+========================================================= */
+
+.stDataFrame,
+.stDataFrame div,
+.stDataFrameGlideDataEditor {
+  border-radius: 0 !important;
+  font-family: "AdobeClean", sans-serif !important;
+}
+
+/* =========================================================
+   INTERACTIVE ELEMENTS
+========================================================= */
+
+.stTextInput,
+.stTextArea,
+.stNumberInput,
+.stSlider,
+.stMultiselect,
+.stRadio,
+.stCheckbox,
+.stToggle,
+.stFileUploader,
+.stColorPicker,
+.stDateInput,
+.stTimeInput,
+.stCameraInput,
+[data-testid="stTextInput"] > div,
+[data-testid="stButton"] button,
+[data-testid="stBaseButton-secondaryFormSubmit"],
+[data-testid="stStatusWidget"] {
+  border-radius: 0 !important;
+  font-family: "AdobeClean", sans-serif !important;
+}
+
+/* Slider accent */
+[data-testid="stSlider"] [role="slider"] {
+  background-color: var(--accent) !important;
+}
+
+/* =========================================================
+   MARKDOWN
+========================================================= */
+
+[data-testid="stMarkdownContainer"] strong {
+  font-family: "AdobeClean", sans-serif !important;
+  color: var(--accent) !important;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.stForm {
+  margin-top: 2rem !important;
+  padding: 1.5rem 1rem !important;
+  background-color: var(--bg-card) !important;
+  border-top: 2px solid var(--accent) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-primary);
+  box-shadow: 0 4px 32px rgba(249, 115, 22, 0.07);
+}
+
+/* =========================================================
+   SIDEBAR TEXT & LINKS
+========================================================= */
+[data-testid="stSidebar"] * {
+  color: var(--text-muted) !important;
+}
+
+[data-testid="stSidebarNavLink"]:hover {
+  color: var(--accent) !important;
+  background-color: var(--accent-glow) !important;
+}
+
+/* =========================================================
+   SCROLLBAR (bonus polish)
+========================================================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 0;
+}
